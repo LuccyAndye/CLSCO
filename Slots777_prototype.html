@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Slots777 - 老虎机游戏</title>
+    <link rel="stylesheet" href="Slots777_styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 应用包装器 -->
+    <div class="app-wrapper">
+        <!-- 导航栏 -->
+        <header class="top-bar">
+            <div class="menu-icon">☰</div>
+            <div class="app-title">Slots 777</div>
+            <div class="user-info">
+                <div class="user-balance">¥1,000</div>
+                <div class="user-avatar">👤</div>
+            </div>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="content-area">
+            <!-- 首页/游戏页面 -->
+            <div class="page active" id="home">
+                <!-- 新用户欢迎横幅 -->
+                <div class="welcome-banner">
+                    <div class="welcome-message">
+                        <h2>欢迎来到 Slots 777!</h2>
+                        <p>开始您的幸运之旅</p>
+                    </div>
+                    <button class="btn btn-primary">开始游戏</button>
+                </div>
+                
+                <!-- 游戏容器 -->
+                <div class="game-container">
+                    <div class="game-title">
+                        <div class="game-mode-switch">
+                            <div class="mode-option active">3x3</div>
+                            <div class="mode-option">3x5</div>
+                        </div>
+                        <h2>经典老虎机</h2>
+                        <div class="game-mode-switch">
+                            <div class="mode-option active">基础</div>
+                            <div class="mode-option">高级</div>
+                        </div>
+                    </div>
+                    <div class="slot-machine">
+                        <div class="paylines">
+                            <div class="payline-option active">3线</div>
+                            <div class="payline-option">5线</div>
+                            <div class="payline-option">9线</div>
+                        </div>
+                        <div class="reels-container">
+                            <div class="payline-indicator payline-1"></div>
+                            <div class="payline-indicator payline-2"></div>
+                            <div class="payline-indicator payline-3"></div>
+                            <div class="payline-indicator payline-4"></div>
+                            <div class="payline-indicator payline-5"></div>
+                            <div class="reels">
+                                <div class="reel reel-1">
+                                    <div class="symbol">7️⃣</div>
+                                    <div class="symbol">🍒</div>
+                                    <div class="symbol">💎</div>
+                                </div>
+                                <div class="reel reel-2">
+                                    <div class="symbol">💎</div>
+                                    <div class="symbol highlight">7️⃣</div>
+                                    <div class="symbol">🍋</div>
+                                </div>
+                                <div class="reel reel-3">
+                                    <div class="symbol">🍒</div>
+                                    <div class="symbol highlight">7️⃣</div>
+                                    <div class="symbol">⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <div class="bet-controls">
+                                <div class="bet-label">下注金额:</div>
+                                <div class="bet-amount-control">
+                                    <button class="btn btn-bet">-</button>
+                                    <div class="bet-amount">¥50</div>
+                                    <button class="btn btn-bet">+</button>
+                                </div>
+                            </div>
+                            <button class="spin-button">旋转</button>
+                            <div class="auto-spin">
+                                <div class="auto-spin-label">自动旋转</div>
+                                <label class="switch">
+                                    <input type="checkbox" id="autoSpin">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 游戏信息区域 -->
+                    <div class="game-info">
+                        <div class="paytable">
+                            <h3>赔率表</h3>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">7️⃣</div>
+                                <div>三个相同 - 赔率 x100</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">💎</div>
+                                <div>三个相同 - 赔率 x50</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">🍒</div>
+                                <div>三个相同 - 赔率 x25</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">🍋</div>
+                                <div>三个相同 - 赔率 x10</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">🍊</div>
+                                <div>三个相同 - 赔率 x8</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">🍇</div>
+                                <div>三个相同 - 赔率 x5</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">BAR</div>
+                                <div>三个相同 - 赔率 x3</div>
+                            </div>
+                            <div class="paytable-item">
+                                <div class="paytable-symbol">⭐</div>
+                                <div>Wild - 替代任何符号</div>
+                            </div>
+                        </div>
+                        <div class="game-stats">
+                            <h3>游戏统计</h3>
+                            <div class="stat-item">
+                                <div>余额:</div>
+                                <div class="user-balance">¥1,000</div>
+                            </div>
+                            <div class="stat-item">
+                                <div>总投注:</div>
+                                <div>¥250</div>
+                            </div>
+                            <div class="stat-item">
+                                <div>总赢取:</div>
+                                <div>¥750</div>
+                            </div>
+                            <div class="stat-item">
+                                <div>净收益:</div>
+                                <div>¥500</div>
+                            </div>
+                            <div class="stat-item">
+                                <div>连胜次数:</div>
+                                <div>2</div>
+                            </div>
+                            <div class="stat-item">
+                                <div>当前等级:</div>
+                                <div>3</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 风险游戏 -->
+                    <div class="risk-game">
+                        <div class="risk-game-title">风险游戏 - 双倍或全无</div>
+                        <div class="risk-game-options">
+                            <div class="risk-option">
+                                <div>红色</div>
+                                <div class="risk-multiplier">x2</div>
+                            </div>
+                            <div class="risk-option">
+                                <div>黑色</div>
+                                <div class="risk-multiplier">x2</div>
+                            </div>
+                            <div class="risk-option">
+                                <div>红桃</div>
+                                <div class="risk-multiplier">x4</div>
+                            </div>
+                            <div class="risk-option">
+                                <div>方块</div>
+                                <div class="risk-multiplier">x4</div>
+                            </div>
+                            <div class="risk-option">
+                                <div>梅花</div>
+                                <div class="risk-multiplier">x4</div>
+                            </div>
+                            <div class="risk-option">
+                                <div>黑桃</div>
+                                <div class="risk-multiplier">x4</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-play">收集奖励</button>
+                    </div>
+                </div>
+                
+                <!-- 累积奖池 -->
+                <div class="jackpot-container">
+                    <div class="jackpot-title">累积大奖池</div>
+                    <div class="jackpot-amount">¥12,345,678</div>
+                </div>
+                
+                <!-- 小游戏区域 -->
+                <div class="mini-game-container">
+                    <div class="mini-game-title">幸运骰子</div>
+                    <div class="dice-game">
+                        <div class="dice-container">
+                            <div class="dice">1</div>
+                            <div class="dice">6</div>
+                        </div>
+                        <div class="dice-options">
+                            <div class="dice-option">小 (2-6)</div>
+                            <div class="dice-option active">大 (7-12)</div>
+                        </div>
+                        <button class="btn btn-play">掷骰子</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 成就页面 -->
+            <div class="page" id="achievements">
+                <div class="container achievements-page">
+                    <div class="achievement-stats">
+                        <div class="achievement-progress">成就完成度: 3/10</div>
+                        <div class="achievement-bar">
+                            <div class="achievement-bar-fill" style="width: 30%;"></div>
+                        </div>
+                        <div>解锁更多成就获得额外奖励!</div>
+                    </div>
+                    
+                    <div class="achievement-list">
+                        <div class="achievement-item achievement-completed">
+                            <div class="achievement-icon">🎮</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">初次尝试</div>
+                                <div class="achievement-description">完成第一次旋转</div>
+                                <div class="achievement-reward">奖励: 50金币</div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-item achievement-completed">
+                            <div class="achievement-icon">💰</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">小赢家</div>
+                                <div class="achievement-description">单次获胜超过100金币</div>
+                                <div class="achievement-reward">奖励: 100金币</div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-item achievement-completed">
+                            <div class="achievement-icon">🔄</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">旋转达人</div>
+                                <div class="achievement-description">完成50次旋转</div>
+                                <div class="achievement-reward">奖励: 200金币</div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🏆</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">大赢家</div>
+                                <div class="achievement-description">单次获胜超过1000金币</div>
+                                <div class="achievement-reward">奖励: 500金币</div>
+                                <div class="achievement-progress-small">
+                                    <div class="achievement-progress-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🌟</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">幸运七</div>
+                                <div class="achievement-description">获得三个7的组合</div>
+                                <div class="achievement-reward">奖励: 777金币</div>
+                                <div class="achievement-progress-small">
+                                    <div class="achievement-progress-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon">📅</div>
+                            <div class="achievement-info">
+                                <div class="achievement-name">坚持不懈</div>
+                                <div class="achievement-description">连续7天登录游戏</div>
+                                <div class="achievement-reward">奖励: 300金币</div>
+                                <div class="achievement-progress-small">
+                                    <div class="achievement-progress-fill" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 设置页面 -->
+            <div class="page" id="settings">
+                <div class="container settings-page">
+                    <div class="settings-section">
+                        <div class="settings-title">游戏设置</div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">音效</div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">音乐</div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">音量</div>
+                            <div class="volume-control">
+                                <input type="range" min="0" max="100" value="80" class="volume-slider">
+                            </div>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">震动</div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">高对比度模式</div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-label">自动旋转速度</div>
+                            <div class="volume-control">
+                                <input type="range" min="1" max="5" value="3" class="volume-slider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 奖励页面 -->
+            <div class="page" id="rewards">
+                <div class="container rewards-page">
+                    <div class="daily-rewards">
+                        <div class="rewards-title">每日登录奖励</div>
+                        <div class="rewards-description">连续登录获得更多奖励！</div>
+                        
+                        <div class="daily-rewards-grid">
+                            <div class="daily-reward claimed">
+                                <div class="day-label">第1天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">50</div>
+                            </div>
+                            <div class="daily-reward active">
+                                <div class="day-label">第2天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">100</div>
+                                <button class="btn-claim">领取</button>
+                            </div>
+                            <div class="daily-reward">
+                                <div class="day-label">第3天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">150</div>
+                            </div>
+                            <div class="daily-reward">
+                                <div class="day-label">第4天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">200</div>
+                            </div>
+                            <div class="daily-reward">
+                                <div class="day-label">第5天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">250</div>
+                            </div>
+                            <div class="daily-reward">
+                                <div class="day-label">第6天</div>
+                                <div class="reward-icon">💰</div>
+                                <div class="reward-amount">300</div>
+                            </div>
+                            <div class="daily-reward special-reward">
+                                <div class="day-label">第7天</div>
+                                <div class="reward-icon">🎁</div>
+                                <div class="reward-amount">500</div>
+                            </div>
+                        </div>
+                        
+                        <div class="rewards-description">下一次登录奖励将在 23:59:59 后重置</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 侧边菜单 -->
+        <div class="mobile-nav">
+            <div class="close-menu">×</div>
+            <div class="mobile-nav-header">
+                <div class="user-avatar-large">👤</div>
+                <div class="user-name">Player123</div>
+                <div class="user-level">等级 3</div>
+            </div>
+            <nav class="mobile-nav-items">
+                <a href="#home" class="mobile-nav-item active" data-page="home">
+                    <span class="nav-icon">🏠</span>
+                    <span>主页</span>
+                </a>
+                <a href="#achievements" class="mobile-nav-item" data-page="achievements">
+                    <span class="nav-icon">🏅</span>
+                    <span>成就</span>
+                </a>
+                <a href="#rewards" class="mobile-nav-item" data-page="rewards">
+                    <span class="nav-icon">🎁</span>
+                    <span>奖励</span>
+                </a>
+                <a href="#settings" class="mobile-nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>设置</span>
+                </a>
+                <a href="#shop" class="mobile-nav-item" data-page="shop">
+                    <span class="nav-icon">🛒</span>
+                    <span>商店</span>
+                </a>
+                <a href="#help" class="mobile-nav-item" data-page="help">
+                    <span class="nav-icon">❓</span>
+                    <span>帮助</span>
+                </a>
+            </nav>
+        </div>
+        <div class="mobile-nav-overlay"></div>
+
+        <!-- 底部导航 -->
+        <div class="bottom-nav">
+            <a href="#home" class="nav-item active" data-page="home">
+                <div class="nav-icon">🏠</div>
+                <div>首页</div>
+            </a>
+            <a href="#achievements" class="nav-item" data-page="achievements">
+                <div class="nav-icon">🏅</div>
+                <div>成就</div>
+            </a>
+            <a href="#rewards" class="nav-item" data-page="rewards">
+                <div class="nav-icon">🎁</div>
+                <div>奖励</div>
+            </a>
+            <a href="#settings" class="nav-item" data-page="settings">
+                <div class="nav-icon">⚙️</div>
+                <div>设置</div>
+            </a>
+        </div>
+
+        <!-- 弹窗区域 -->
+        <!-- 游戏结果弹窗 -->
+        <div class="modal result-modal" id="resultModal">
+            <div class="modal-content win-result">
+                <div class="close-modal">×</div>
+                <div class="result-icon">🎉</div>
+                <div class="result-title">恭喜您赢了!</div>
+                <div class="result-amount">+¥500</div>
+                <div class="result-buttons">
+                    <button class="btn btn-result btn-play-again">再玩一次</button>
+                    <button class="btn btn-result btn-risk">风险游戏</button>
+                    <button class="btn btn-result btn-collect">收集奖励</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 特殊事件弹窗 - 免费旋转 -->
+        <div class="modal special-event-modal" id="freeSpinsModal">
+            <div class="modal-content">
+                <div class="close-modal">×</div>
+                <div class="special-event-icon">⭐</div>
+                <div class="special-event-title">免费旋转!</div>
+                <div class="special-event-description">恭喜您获得了免费旋转机会!</div>
+                <div class="free-spins-counter">剩余次数: 10</div>
+                <div class="free-spins-multiplier">所有奖励 x2</div>
+                <button class="btn btn-modal">开始免费旋转</button>
+            </div>
+        </div>
+        
+        <!-- 特殊事件弹窗 - 幸运七大奖 -->
+        <div class="modal special-event-modal" id="lucky7Modal">
+            <div class="modal-content">
+                <div class="close-modal">×</div>
+                <div class="special-event-icon">7️⃣</div>
+                <div class="special-event-title">幸运七大奖!</div>
+                <div class="special-event-description">恭喜您获得了幸运七大奖!</div>
+                <div class="special-event-reward">奖励: ¥38,850</div>
+                <div class="special-event-description">您还解锁了"幸运七"成就!</div>
+                <button class="btn btn-modal">领取奖励</button>
+            </div>
+        </div>
+        
+        <!-- 特殊事件弹窗 - 连胜奖励 -->
+        <div class="modal special-event-modal" id="winStreakModal">
+            <div class="modal-content">
+                <div class="close-modal">×</div>
+                <div class="special-event-icon">🔥</div>
+                <div class="special-event-title">连胜奖励!</div>
+                <div class="special-event-description">您已经连胜5次!</div>
+                <div class="special-event-reward">下一次奖励 x3</div>
+                <button class="btn btn-modal">继续游戏</button>
+            </div>
+        </div>
+        
+        <!-- 特殊事件弹窗 - 累积奖池 -->
+        <div class="modal special-event-modal" id="jackpotModal">
+            <div class="modal-content">
+                <div class="close-modal">×</div>
+                <div class="special-event-icon">💰</div>
+                <div class="special-event-title">累积大奖!</div>
+                <div class="special-event-description">恭喜您触发了累积奖池!</div>
+                <div class="special-event-reward">奖励: ¥1,234,567</div>
+                <button class="btn btn-modal">领取奖励</button>
+            </div>
+        </div>
+        
+        <!-- 教程弹窗 -->
+        <div class="modal" id="tutorialModal">
+            <div class="modal-content">
+                <div class="close-modal" onclick="closeTutorial()">×</div>
+                <div class="tutorial-step active" data-step="1">
+                    <div class="tutorial-icon">🎮</div>
+                    <div class="tutorial-title">欢迎来到 Slots 777!</div>
+                    <div class="tutorial-description">
+                        这是一个简单有趣的老虎机游戏。下面是简单的游戏指南，帮助您快速上手。
+                    </div>
+                    <div class="tutorial-actions">
+                        <button class="btn btn-tutorial" onclick="nextTutorial()">下一步</button>
+                    </div>
+                </div>
+                <div class="tutorial-step" data-step="2">
+                    <div class="tutorial-icon">💰</div>
+                    <div class="tutorial-title">游戏玩法</div>
+                    <div class="tutorial-description">
+                        1. 设置您的下注金额<br>
+                        2. 点击旋转按钮或开启自动旋转<br>
+                        3. 匹配相同符号获得奖励<br>
+                        4. 尝试触发特殊事件获得大奖!
+                    </div>
+                    <div class="tutorial-actions">
+                        <button class="btn btn-tutorial" onclick="prevTutorial()">上一步</button>
+                        <button class="btn btn-tutorial" onclick="nextTutorial()">下一步</button>
+                    </div>
+                </div>
+                <div class="tutorial-step" data-step="3">
+                    <div class="tutorial-icon">🎁</div>
+                    <div class="tutorial-title">奖励与特殊事件</div>
+                    <div class="tutorial-description">
+                        - 三个相同符号获得基础奖励<br>
+                        - ⭐ 是百搭符号，可替代任何其他符号<br>
+                        - 三个 7️⃣ 可获得最高奖励<br>
+                        - 连续获胜可增加奖励倍数<br>
+                        - 记得每天登录领取奖励!
+                    </div>
+                    <div class="tutorial-actions">
+                        <button class="btn btn-tutorial" onclick="prevTutorial()">上一步</button>
+                        <button class="btn btn-tutorial" onclick="closeTutorial()">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Slots777_script.js"></script>
+</body>
+</html> 

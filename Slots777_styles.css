@@ -1,0 +1,1284 @@
+/* Slots777游戏样式 - 第1部分：基础样式 */
+
+:root {
+    /* 主题配色 */
+    --primary-color: #e91e63;
+    --primary-variant: #c2185b;
+    --secondary-color: #ff9800;
+    --secondary-variant: #f57c00;
+    --success-color: #4CAF50;
+    --error-color: #f44336;
+    --warning-color: #ff9800;
+    --info-color: #2196F3;
+    
+    /* 背景色 */
+    --background: #1a1a1a;
+    --surface: #2a2a2a;
+    --surface-variant: #3a3a3a;
+    
+    /* 文本色 */
+    --on-primary: #ffffff;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface: #ffffff;
+    --on-surface-variant: #aaaaaa;
+    
+    /* 阴影 */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--on-background);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.app-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    padding: 15px;
+}
+
+/* 顶部导航栏 */
+.top-bar {
+    background-color: var(--surface);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-balance {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.user-avatar {
+    font-size: 20px;
+}
+
+/* 内容区域 */
+.content-area {
+    min-height: calc(100vh - 60px - 60px); /* 减去顶部导航栏和底部导航的高度 */
+    padding-bottom: 60px; /* 为底部导航留出空间 */
+}
+
+/* 按钮样式 */
+.btn {
+    background-color: var(--surface-variant);
+    color: var(--on-surface);
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--surface);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-variant);
+}
+
+/* 欢迎横幅 */
+.welcome-banner {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--on-primary);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-message h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.welcome-message p {
+    margin-bottom: 15px;
+}
+
+/* 页面切换 */
+.page {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 移动导航 */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--surface);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px var(--shadow-color);
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.mobile-nav-header {
+    padding: 30px 20px 20px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    margin-bottom: 20px;
+}
+
+.user-avatar-large {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-level {
+    font-size: 14px;
+}
+
+.mobile-nav-items {
+    padding: 0 15px;
+}
+
+.mobile-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--on-surface);
+    border-bottom: 1px solid var(--surface-variant);
+}
+
+.mobile-nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* 底部导航 */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--surface);
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    box-shadow: 0 -2px 10px var(--shadow-color);
+    z-index: 100;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--on-surface-variant);
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+/* Slots777游戏样式 - 第2部分：老虎机游戏样式 */
+
+/* 游戏容器 */
+.game-container {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.game-title {
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-title h2 {
+    font-size: 20px;
+    color: var(--primary-color);
+    flex: 1;
+    text-align: center;
+}
+
+.game-mode-switch {
+    display: flex;
+    background-color: var(--surface-variant);
+    border-radius: 20px;
+    padding: 3px;
+}
+
+.mode-option {
+    padding: 5px 10px;
+    border-radius: 17px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.mode-option.active {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+/* 老虎机 */
+.slot-machine {
+    margin-bottom: 20px;
+}
+
+.paylines {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.payline-option {
+    padding: 5px 10px;
+    background-color: var(--surface-variant);
+    border-radius: 15px;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.payline-option.active {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.reels-container {
+    position: relative;
+}
+
+.payline-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.payline-1 {
+    top: 33%;
+}
+
+.payline-2 {
+    top: 50%;
+}
+
+.payline-3 {
+    top: 67%;
+}
+
+.payline-4 {
+    top: 33%;
+    transform: rotate(15deg);
+}
+
+.payline-5 {
+    top: 67%;
+    transform: rotate(-15deg);
+}
+
+.reels {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.reel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.symbol {
+    width: 60px;
+    height: 60px;
+    background-color: var(--surface);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.symbol.highlight {
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+    50% { box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color); }
+    100% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+}
+
+.symbol.wild {
+    background: linear-gradient(45deg, #ff9500, #ff2d55);
+}
+
+/* 游戏控制 */
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bet-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+.bet-label {
+    margin-right: 10px;
+}
+
+.bet-amount-control {
+    display: flex;
+    align-items: center;
+    background-color: var(--surface-variant);
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.btn-bet {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.bet-amount {
+    margin: 0 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.spin-button {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.spin-button:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.spin-button:hover:after {
+    transform: rotate(45deg) translate(-10%, -10%);
+}
+
+.spin-button:active {
+    transform: scale(0.95);
+}
+
+.auto-spin {
+    display: flex;
+    align-items: center;
+}
+
+.auto-spin-label {
+    margin-right: 10px;
+}
+
+/* 开关样式 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--surface-variant);
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* 游戏信息 */
+.game-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.paytable {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.game-stats {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.paytable h3, .game-stats h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.paytable-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.paytable-symbol {
+    font-size: 24px;
+    margin-right: 10px;
+    width: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* 风险游戏 */
+.risk-game {
+    margin-top: 15px;
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.risk-game-title {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.risk-game-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.risk-option {
+    padding: 8px 15px;
+    background-color: var(--surface);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.risk-option:hover {
+    background-color: var(--primary-variant);
+    color: var(--on-primary);
+}
+
+.risk-multiplier {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+}
+
+/* 旋转动画 */
+@keyframes spin {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100px); }
+}
+
+.spinning .symbol {
+    animation: spin 0.1s linear infinite;
+}
+
+/* 累积奖池 */
+.jackpot-container {
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.jackpot-title {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.jackpot-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.jackpot-container:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(255,215,0,0) 70%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Slots777游戏样式 - 第3部分：小游戏、弹窗和其他页面 */
+
+/* 小游戏样式 */
+.mini-game-container {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.mini-game-title {
+    font-size: 18px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 幸运骰子游戏 */
+.dice-game {
+    text-align: center;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dice {
+    width: 60px;
+    height: 60px;
+    background-color: var(--surface-variant);
+    border-radius: 10px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dice-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.dice-option {
+    padding: 8px 15px;
+    background-color: var(--surface-variant);
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dice-option.active {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+/* 弹窗样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.btn-modal {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 游戏结果弹窗 */
+.result-modal .modal-content {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.win-result .result-icon {
+    color: var(--primary-color);
+}
+
+.lose-result .result-icon {
+    color: var(--secondary-color);
+}
+
+.result-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.win-result .result-title {
+    color: var(--primary-color);
+}
+
+.lose-result .result-title {
+    color: var(--secondary-color);
+}
+
+.result-amount {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.win-result .result-amount {
+    color: var(--success-color);
+}
+
+.lose-result .result-amount {
+    color: var(--error-color);
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-result {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-play-again {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.btn-collect {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-risk {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+/* 特殊事件弹窗 */
+.special-event-modal .modal-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.special-event-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+
+.special-event-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.special-event-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--on-surface);
+}
+
+.special-event-reward {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* 免费旋转弹窗 */
+.free-spins-modal .modal-content {
+    text-align: center;
+}
+
+.free-spins-counter {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.free-spins-multiplier {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--success-color);
+}
+
+/* 教程弹窗 */
+.tutorial-step {
+    display: none;
+}
+
+.tutorial-step.active {
+    display: block;
+}
+
+.tutorial-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.tutorial-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.tutorial-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.tutorial-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-tutorial {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 成就页面样式 */
+.achievements-page {
+    padding: 15px;
+}
+
+.achievement-stats {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.achievement-progress {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.achievement-bar {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.achievement-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 65%;
+}
+
+.achievement-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.achievement-item {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--surface-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.achievement-completed .achievement-icon {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.achievement-description {
+    font-size: 12px;
+    color: var(--on-surface-variant);
+    margin-bottom: 5px;
+}
+
+.achievement-reward {
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.achievement-progress-small {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.achievement-progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+/* 设置页面样式 */
+.settings-page {
+    padding: 15px;
+}
+
+.settings-section {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.settings-title {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--surface-variant);
+}
+
+.settings-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.settings-item-label {
+    font-size: 16px;
+}
+
+.settings-item-value {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+}
+
+.volume-control {
+    width: 120px;
+}
+
+.volume-slider {
+    width: 100%;
+    height: 4px;
+    background-color: var(--surface-variant);
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 2px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.btn-small {
+    background-color: var(--surface-variant);
+    color: var(--on-surface);
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 奖励页面样式 */
+.rewards-page {
+    padding: 15px;
+}
+
+.daily-rewards {
+    background-color: var(--surface);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.rewards-title {
+    font-size: 18px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rewards-description {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.daily-rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.daily-reward {
+    background-color: var(--surface-variant);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.day-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.reward-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.reward-amount {
+    font-size: 14px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.daily-reward.claimed {
+    opacity: 0.5;
+}
+
+.daily-reward.claimed:after {
+    content: "✓";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: var(--success-color);
+}
+
+.daily-reward.active {
+    border: 2px solid var(--primary-color);
+}
+
+.special-reward {
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+.btn-claim {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+    margin-top: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 480px) {
+    .daily-rewards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .daily-rewards-grid .daily-reward:nth-child(n+5) {
+        grid-column: span 2;
+    }
+    
+    .daily-rewards-grid .daily-reward:nth-child(7) {
+        grid-column: 2 / span 2;
+    }
+    
+    .game-info {
+        flex-direction: column;
+    }
+    
+    .risk-game-options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .symbol {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+} 
